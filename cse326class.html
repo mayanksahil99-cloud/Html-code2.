@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="myform" onsubmit="return validateForm()">
+        <label>Name:</label>
+        <input class="error" id="nameError"></div>
+        <div class="error" id="nameError"></div>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <div class="error" id="emailError"></div>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <div class="error" id="passError"></div>
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPassError">
+        <div class="error" id="confirmPassError"></div>
+
+
+        <label>Phone</label>
+        <Input type="text"  id="phone">
+        <div class="error" id="phoneError"></div>
+    <button type="submit">Register</button>
+    </form>
+    <script>
+    function validateForm() {
+        // Clear all errors
+        document.getElementById("nameError").innerHTML="";
+        document.getElementById("EmailError").innerHTML="";
+        document.getElementById("PassError").innerHTML="";
+        document.getElementById("confirmPassError").innerHTML="";
+        document.getElementById("phoneError").innerHTML="";
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let confirmPassError= document.getElementById("confirmPassError").value.trim();
+        let phone= document.getElementById("phone").value.trim();
+
+        let isvalid = true;
+
+        // validate Name(empty +alphabets only )
+        if (name === "") {
+            document.getElementById("nameError").innerHTML = "Name cannot be empty";
+            isvalid = false;
+        } else {
+          let namePattern = /^[A-Za-z]+$/;
+          if (!name.match(namePattern) ){
+            document.getElementById("nameError").innerHTML = "Name
+            should contain only alphabets ()"
+          }
+          
+        }
+        
+
+
+    }
+    </script>
+</body>
+</html>
